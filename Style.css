@@ -14,10 +14,6 @@
     height: 100px;
 }
 
-.nav-item{
-    text-black 
-}
-
 .carousel-inner {
     height: 400px;
 }
@@ -31,6 +27,7 @@
     background: linear-gradient(90deg, #24ca3d, #367331 35%, #24ca3d 100%);
     padding: 0 170px 0 170px;
 }
+
 
 
 

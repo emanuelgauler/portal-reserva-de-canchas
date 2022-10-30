@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+.img-logo-login{
+    
+    height: 7rem;
+    
+    
+}
+
+.margin-form{
+    width: 40%;
+    background-color: #eae4e4e3;
+    padding: 20px;
+}
+
+body {
+    height: 600px;
+    background-image: url("/login/ImagenesLogin/cancha.jpg");
+  background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    
+  }
+
+ 
