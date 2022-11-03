@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto Futbol / Reservas </title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="../portal-reserva-de-canchas/Style.css">
+</head>
+<body>
+    <header>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+        <nav class="navbar navbar-expand-sm bg-light nav-bg-color">
+        <div class="container-fluid">
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="d-flex justify-content-center">
+                <img src="/portal-reserva-de-canchas/Diagramas/LogoPuntoFutbol.png" alt="LogoPuntoFutbol" class="img-logo-menu"/>
+                <div hidden>
+                <h1 class="card-title fw-bolder ps-3 pt-3">Punto Futbol</h1></div>
+            </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link cl-link-menu-select fw-semibold fs-4 text-dark " aria-current="page" href="/portal-reserva-de-canchas/index.html">Futbol</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="#">Padel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="/portal-reserva-de-canchas/contacto/contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark " href="/portal-reserva-de-canchas/login/login.html">Iniciar Sesión</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    </header> 
+<main>
+<h1 class="text-center">Realice su reserva</h1>
+<form>
+    <label for="exampleDataList" class="form-label">Cancha:</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleccionar">
+<datalist id="datalistOptions">
+    <option value="Futbol">
+    <option value="Futbol Sala">
+    <option value="Paddle">
+</datalist>
+<label for="exampleDataList" class="form-label">Cantidad de personas:</label>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+    <label class="form-check-label" for="inlineRadio3">3</label>
+</div>
+</form>
+</main>
+</body>
