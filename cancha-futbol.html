@@ -28,8 +28,53 @@
         </header>
     </div>
 
-    <main>
-
+    <main class="container">
+        <div class="row row-col-auto">
+            <div class="col-4 card">
+                <div id="carouselExampleIndicators" class="carousel slide bg-dark" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="ImagenesHome/futbol5.jpg" class="img-card-top" alt="Futbol 1" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagenesHome/futbol5_2.jpg" class="d-block" alt="Futbol 2" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="ImagenesHome/futsal.jpg" class="d-block" alt="Futbol 3" />
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Nombre de la cancha</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Tipo de cancha</li>
+                        <li class="list-group-item">Medidas de la cancha</li>
+                        <li class="list-group-item">Precio de la reserva</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary" style="background-color: green; border-color: green;">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="navfooter py-3">
