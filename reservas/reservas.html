@@ -10,7 +10,7 @@
     rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
     crossorigin="anonymous">
-    <link rel="stylesheet" href="../portal-reserva-de-canchas/Style.css">
+    <link rel="stylesheet" href="../Style.css">
 </head>
 <body>
     <header>
@@ -50,29 +50,35 @@
     </nav>
     </header> 
 <main>
-<h1 class="text-center">Realice su reserva</h1>
-<form>
-    <label for="exampleDataList" class="form-label">Cancha:</label>
-<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Seleccionar">
-<datalist id="datalistOptions">
-    <option value="Futbol">
-    <option value="Futbol Sala">
-    <option value="Paddle">
-</datalist>
-<label for="exampleDataList" class="form-label">Cantidad de personas:</label>
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-    <label class="form-check-label" for="inlineRadio1">1</label>
+<h1 class="text-center mt-5">Realice su reserva</h1>
+<div class="row p-5">
+    <label for="staticEmail" class="col-1 col-form-label">Cancha:</label> 
+        <div class="col-5">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Seleccione</option>
+            <option value="1">Futbol</option>
+            <option value="2">Futbol sala</option>
+            <option value="3">Paddle</option>
+        </select>
+        </div>
 </div>
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-    <label class="form-check-label" for="inlineRadio2">2</label>
+<div class="row p-5">
+    <label for="exampleDataList" class="col-2 col-form-label">Cantidad de personas:</label>
+    <div class="col">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">3</label>
+        </div>
+    </div>
 </div>
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-    <label class="form-check-label" for="inlineRadio3">3</label>
-</div>
-</form>
 </main>
 </body>
 </html>
