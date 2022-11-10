@@ -1,6 +1,3 @@
-
-
-
 window.addEventListener('load', () => {
     setDateInputFormat();
     setInputEvent();
@@ -45,5 +42,3 @@ const retrieveLastData = () => {
     
     
 };
-
-
