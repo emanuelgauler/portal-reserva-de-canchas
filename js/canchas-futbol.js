@@ -1,3 +1,10 @@
+const reservarCancha = (e) => {
+   console.log("Ingresando acá" + e);
+   //console.log(soccer_fields[e]);
+   sessionStorage.setItem("canchaSeleccionada", JSON.stringify(soccer_fields[e]))
+   //redirigir
+   window.location.replace("/reservas/reserva.html")
+};
 var soccer_fields = [
    {
       "imgs": [
@@ -60,7 +67,8 @@ function load_soccer_fields(soccer_fields) {
                         <li class="list-group-item">${court.precio}</li>
                     </ul>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary" style="background-color: green; border-color: green;">Reservar</a>
+                        <a class="btn btn-primary" style="background-color: green; border-color: green;" onclick="reservarCancha('${idx}')">Reservar</a>
+                       
                     </div>
                 </div>
             </div>`;
