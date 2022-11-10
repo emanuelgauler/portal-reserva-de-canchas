@@ -51,8 +51,21 @@
     </header> 
 <main>
 <h1 class="text-center mt-5">Realice su reserva</h1>
-<div class="row p-5">
-    <label for="staticEmail" class="col-1 col-form-label">Cancha:</label> 
+<form class="row g-3 m-5">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Nombre y apellido</label>
+        <input type="password" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-6">
+        <label for="staticEmail" class="col-1 col-form-label">Cancha:</label> 
         <div class="col-5">
         <select class="form-select" aria-label="Default select example">
             <option selected>Seleccione</option>
@@ -61,10 +74,9 @@
             <option value="3">Paddle</option>
         </select>
         </div>
-</div>
-<div class="row p-5">
-    <label for="exampleDataList" class="col-2 col-form-label">Cantidad de personas:</label>
-    <div class="col">
+    </div>
+    <div class="col-6">
+        <label for="exampleDataList" class="col-2 col-form-label">Cantidad de personas:</label>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -78,7 +90,22 @@
             <label class="form-check-label" for="inlineRadio3">3</label>
         </div>
     </div>
-</div>
+    <div class="col-6">
+    <label>
+        Fecha:
+        <input type="date" name="fecha" />
+    </label>
+    </div>
+    <div class="col-6">
+        <label>
+        Horario:
+        <input type="time">
+        </label>
+    </div>
+    <div class="row mt-4">
+        <button type="submit" class="btn btn-success">Reservar</button>
+    </div>
+</form>
 </main>
 </body>
 </html>
