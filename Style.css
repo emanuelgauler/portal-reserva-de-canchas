@@ -50,6 +50,26 @@
     font-size: inherit;
 }
 
+.img-icono-reserva{
+    width: 20px;
+    height: 20px;
+}
+
+.containerReserva{
+    width: 70%;
+    background-color: #e4eae9e3;
+    padding: 20px;
+    justify-items: center;
+}
+
+.col-form-hora
+{
+    display: inline-block; 
+    width: 50px;
+    height: 50px;   
+    vertical-align: baseline; 
+    font-size: inherit;
+}
 
 
 
