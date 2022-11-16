@@ -1,23 +1,33 @@
-paddle_fields = [
+const reservarCancha = (e) => {
+   console.log("Ingresando acá" + e);
+   //console.log(soccer_fields[e]);
+   sessionStorage.setItem("canchaSeleccionada", JSON.stringify(paddle_fields[e]))
+   //redirigir
+   window.location.replace("/reservas/reserva.html")
+};
+
+ paddle_fields = [
    {
       "imgs": [
          { "path": "ImagenesHome/PaddleCemento.jpg", "desc": "Piso Cemento" },
          { "path": "ImagenesHome/PaddleCemento2.jpg", "desc": "Piso Cemento" }
       ],
-      "titulo": "Cancha de Cemento",
+      "tipo_de_cancha": "Cancha de Cemento",
       "suelo": "Cemento",
       "medidas": "20mts x 10mts",
-      "precio": 3000
+      "precio": 3000,
+      "type": "padel"
    },
    {
       "imgs": [
          { "path": "ImagenesHome/PaddleCesped.jpg", "desc": "Piso Cesped" },
          { "path": "ImagenesHome/PaddleCesped2.jpg", "desc": "Piso Cesped" }
       ],
-      "titulo": "Cancha de Césped y Caucho",
+      "tipo_de_cancha": "Cancha de Césped y Caucho",
       "suelo": "Cesped",
       "medidas": "20mts x 10mts",
-      "precio": 5000
+      "precio": 5000,
+      "type": "padel"
    }
 ,
    {
@@ -25,10 +35,11 @@ paddle_fields = [
          { "path": "ImagenesHome/PaddleArena.jpg", "desc": "Piso con Arena" },
          { "path": "ImagenesHome/PaddleArena2.jpg", "desc": "Piso con Arena" }
       ],
-      "titulo": "Cancha de Césped y Arena",
+      "tipo_de_cancha": "Cancha de Césped y Arena",
       "suelo": "Arena",
       "medidas": "20mts x 10mts",
-      "precio": 5000
+      "precio": 5000,
+      "type": "padel"
    }
 ];
 
@@ -57,23 +68,24 @@ function load_paddle_fields_from(paddle_fields) {
                </button>
             </div>
             <div class="card-body">
-               <h3 class="card-title">${field.titulo}</h3>
+               <h3 class="card-title">${field.tipo_de_cancha}</h3>
                <ul class="list-group list-group-flush">
                   <li class="list-group-item">Tipo de cancha: ${field.suelo}</li>
                   <li class="list-group-item">Medidas de la cancha: ${field.medidas}</li>
                   <li class="list-group-item">Precio de la reserva: ${field.precio}</li>
                </ul>
                <div class="card-footer">
-                  <a class="btn btn-primary" style="background-color: green; border-color: green;" onclick="reservarCancha(${idx});">Reservar</a>
-               </div>
+                  <a class="btn btn-primary" style="background-color: green; border-color: green;" onclick="reservarCancha('${idx}')">Reservar</a>
+                </div>
             </div>
       </div>`;
       return html;
    }, "");
 
 }
+load_paddle_fields_from( paddle_fields );
 
-function reservarCancha( id ) {
+/*function reservarCancha( id ) {
    
    sessionStorage.setItem("padelSeleccionado", JSON.stringify(paddle_fields[id]))
    //redirigir
@@ -81,3 +93,7 @@ function reservarCancha( id ) {
 }
 
 load_paddle_fields_from( paddle_fields );
+
+*/
+
+

@@ -13,7 +13,8 @@ var soccer_fields = [
       ],
       tipo_de_cancha: "Cesped Sintético",
       cantidad_por_equipo: 5,
-      precio: 1200
+      precio: 1200,
+      type: "futbol"
    },
    {
       "imgs": [
@@ -22,7 +23,8 @@ var soccer_fields = [
       ],
       tipo_de_cancha: "Piso",
       cantidad_por_equipo: 5,
-      precio: 2000
+      precio: 2000,
+      type: "futbol"
    },
    {
       "imgs": [
@@ -31,7 +33,8 @@ var soccer_fields = [
       ],
       tipo_de_cancha: "Piso",
       cantidad_por_equipo: 7,
-      precio: 2000
+      precio: 2000,
+      type: "futbol"
    }
 
 ];
