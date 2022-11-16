@@ -29,11 +29,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <div class="d-flex justify-content-center">
-                            <img src="/Diagramas/LogoPuntoFutbol.png"
-                                alt="LogoPuntoFutbol" class="img-logo-menu"/>
-                            <div hidden>
-                                <h1 class="card-title fw-bolder ps-3 pt-3">Punto
-                                    Futbol</h1></div>
+                            <a href="/index.html">
+                                <img src="/Diagramas/LogoPuntoFutbol.png"
+                                    alt="LogoPuntoFutbol"
+                                    class="img-logo-menu"/>
+                                <div hidden>
+                                    <h1 class="card-title fw-bolder ps-3 pt-3">Punto
+                                        Futbol</h1></div>
+                            </a>
                         </div>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
@@ -63,18 +66,17 @@
         <main>
 
             <h1 class="text-center mt-5 fw-semibold">Confirmar Reserva</h1>
-            
-
             <form class="row g-3 p-5 d-flex justify-content-center
                 text-secondary">
-                <div class="containerReserva 
+                <div class="containerReserva
                     justify-content-center rounded-3">
 
                     <div class="row g-2 justify-content-center">
-                        <div class="alert alert-secondary text-center" role="alert">
+                        <div class="alert alert-secondary text-center"
+                            role="alert">
                             <span style="color: green;" id="lbltipoCancha"></span>
-                           <div id="lbltipo">
-                               <br> <b><span> Tipo: </span></b>
+                            <div id="lbltipo">
+                                <br> <b><span> Tipo: </span></b>
                                 <span id="lblcancha"></span>
                             </div>
                             <div id="lbljugador">
@@ -92,10 +94,10 @@
                             <div id="lblcosto">
                                 <b><span> Precio: $ </span></b>
                                 <span id="lblprecio"></span>
-                            </div>                         
-                            
+                            </div>
+
                         </div>
-                        
+
                     </div>
                     <div class="row g-2 justify-content-center">
                         <div class="col-5 g-5">
@@ -105,10 +107,10 @@
                                 false">
                         </div>
 
-                        
+
                         <div class="col-1 g-5">
                             <label for="staticHora" class="col-sm-1
-                            col-form-hora">Hora</label>
+                                col-form-hora">Hora</label>
                         </div>
                         <div class="col-2 g-5">
                             <select class="form-select form-select-sm col-sm-10"
@@ -135,23 +137,24 @@
 
                     <div class="row g-2">
                         <button type="button" class="btn btn-success"
-                        id="btnConfirmar"
+                            id="btnConfirmar"
                             data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">Confirmar</button>
                     </div>
 
-                    
-                    
+
+
                     <!-- Modal -->
                     <div class="modal fade" id="staticBackdrop"
-                    data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
+                        data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5"
-                                        id="staticBackdropLabel">Reserva Confirmada</h1>
+                                        id="staticBackdropLabel">Reserva
+                                        Confirmada</h1>
                                     <button type="button" class="btn-close"
                                         data-bs-dismiss="modal"
                                         aria-label="Close"></button>
@@ -159,56 +162,56 @@
                                 <div class="modal-body fst-italic">
                                     <!--<b><br><span id="lbltipoCancha" ></span></b> -->
                                     <div id="cancha" style="color: green;">
-                                    <b><span > Cancha: </span></b>
-                                    <b><span id="lbltipoCancha1"></span></b>
+                                        <b><span> Cancha: </span></b>
+                                        <b><span id="lbltipoCancha1"></span></b>
                                     </div>
                                     <div id="lbltipo1">
                                         <br> <b><span> Tipo: </span></b>
-                                         <span id="lblcancha1"></span>
-                                     </div>                                 
-                                     <div id="lbljugador1">
+                                        <span id="lblcancha1"></span>
+                                    </div>
+                                    <div id="lbljugador1">
                                         <b><span>Jugadores por equipo: </span></b>
                                         <span id="lblcantidadEquipo1"></span>
-                                    </div>  
+                                    </div>
                                     <div id="lbltipoSuelo1">
                                         <b><span> Suelo: </span></b>
                                         <span id="lblsuelo1"></span>
-                                    </div> 
+                                    </div>
                                     <div id="lblmedida1">
                                         <b><span> Medidas: </span></b>
                                         <span id="lblmedidas1"></span>
-                                    </div> 
+                                    </div>
                                     <div id="lblcosto1">
                                         <b><span> Precio: $ </span></b>
                                         <span id="lblprecio1"></span>
-                                    </div>    
+                                    </div>
                                     <div id="lblfecha">
                                         <b><span> Fecha: </span></b>
                                         <span id="dtReserva1"></span>
-                                    </div>   
+                                    </div>
                                     <div id="lblhora">
-                                        <b><span> Hora:  </span></b>
+                                        <b><span> Hora: </span></b>
                                         <span id="timeReserva1"></span>
-                                    </div>                      
-                                    
-                                                                   
-                                    
+                                    </div>
+
+
+
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-success"
-                                     data-bs-dismiss="modal">Cerrar</button>
-                                    
+                                    <button type="button" class="btn
+                                        btn-outline-success"
+                                        data-bs-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    
 
 
 
-                    
-                    
+
+
+
+
                 </div>
             </form>
 
