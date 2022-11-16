@@ -71,13 +71,29 @@
                     justify-content-center rounded-3">
 
                     <div class="row g-2 justify-content-center">
-                        <div class="alert alert-secondary text-center fw-semibold" role="alert">
-                            Tipo:
-                            <span id="lblcancha"></span>
-                            <br>Jugadores por equipo:
-                            <span id="lblcantidadEquipo"></span>
-                            <br>Precio: $
-                            <span id="lblprecio"></span>
+                        <div class="alert alert-secondary text-center" role="alert">
+                            <span style="color: green;" id="lbltipoCancha"></span>
+                           <div id="lbltipo">
+                               <br> <b><span> Tipo: </span></b>
+                                <span id="lblcancha"></span>
+                            </div>
+                            <div id="lbljugador">
+                                <b><span>Jugadores por equipo: </span></b>
+                                <span id="lblcantidadEquipo"></span>
+                            </div>
+                            <div id="lbltipoSuelo">
+                                <b><span> Suelo: </span></b>
+                                <span id="lblsuelo"></span>
+                            </div>
+                            <div id="lblmedida">
+                                <b><span> Medidas: </span></b>
+                                <span id="lblmedidas"></span>
+                            </div>
+                            <div id="lblcosto">
+                                <b><span> Precio: $ </span></b>
+                                <span id="lblprecio"></span>
+                            </div>                         
+                            
                         </div>
                         
                     </div>
@@ -141,16 +157,42 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body fst-italic">
-                                   <b> Tipo: </b>
-                                    <span id="lblcancha1"></span>
-                                    <b><br>Jugadores por equipo: </b>
-                                    <span id="lblcantidadEquipo1"></span>
-                                    <b><br>Precio: $ </b>
-                                    <span id="lblprecio1"></span>
-                                    <b><br> Fecha:</b>
-                                    <span id="dtReserva1"></span>
-                                    <b><br> Hora: </b>
-                                    <span id="timeReserva1"></span>
+                                    <!--<b><br><span id="lbltipoCancha" ></span></b> -->
+                                    <div id="cancha" style="color: green;">
+                                    <b><span > Cancha: </span></b>
+                                    <b><span id="lbltipoCancha1"></span></b>
+                                    </div>
+                                    <div id="lbltipo1">
+                                        <br> <b><span> Tipo: </span></b>
+                                         <span id="lblcancha1"></span>
+                                     </div>                                 
+                                     <div id="lbljugador1">
+                                        <b><span>Jugadores por equipo: </span></b>
+                                        <span id="lblcantidadEquipo1"></span>
+                                    </div>  
+                                    <div id="lbltipoSuelo1">
+                                        <b><span> Suelo: </span></b>
+                                        <span id="lblsuelo1"></span>
+                                    </div> 
+                                    <div id="lblmedida1">
+                                        <b><span> Medidas: </span></b>
+                                        <span id="lblmedidas1"></span>
+                                    </div> 
+                                    <div id="lblcosto1">
+                                        <b><span> Precio: $ </span></b>
+                                        <span id="lblprecio1"></span>
+                                    </div>    
+                                    <div id="lblfecha">
+                                        <b><span> Fecha: </span></b>
+                                        <span id="dtReserva1"></span>
+                                    </div>   
+                                    <div id="lblhora">
+                                        <b><span> Hora:  </span></b>
+                                        <span id="timeReserva1"></span>
+                                    </div>                      
+                                    
+                                                                   
+                                    
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-success"
