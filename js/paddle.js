@@ -3,7 +3,7 @@ const reservarCancha = (e) => {
    //console.log(soccer_fields[e]);
    sessionStorage.setItem("canchaSeleccionada", JSON.stringify(paddle_fields[e]))
    //redirigir
-   window.location.replace("/reservas/reserva.html")
+   window.location.replace("./reservas/reserva.html")
 };
 
  paddle_fields = [
