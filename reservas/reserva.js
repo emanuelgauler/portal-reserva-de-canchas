@@ -23,7 +23,7 @@ const setInputEvent = () => {
 
 const getDate = () => new Date().toISOString().slice(0, 10);
 
-const setDateInputFormat = () => {
+const  setDateInputFormat = () => {
     let reserva = document.getElementById("dtReserva");
     reserva.min = getDate();
 }
