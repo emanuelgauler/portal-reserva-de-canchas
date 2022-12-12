@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <servlet>
+    <description></description>
+    <display-name>UsuariosController</display-name>
+    <servlet-name>UsuariosController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.UsuariosController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UsuariosController</servlet-name>
+    <url-pattern>/UsuariosController</url-pattern>
+  </servlet-mapping>
+  <display-name>ReservaCanchas</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FutbolController</display-name>
+    <servlet-name>FutbolController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.FutbolController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FutbolController</servlet-name>
+    <url-pattern>/FutbolController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Canchas</display-name>
+    <servlet-name>Canchas</servlet-name>
+    <servlet-class>ar.com.cac.modelos.Canchas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Canchas</servlet-name>
+    <url-pattern>/Canchas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CanchasController</display-name>
+    <servlet-name>CanchasController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.CanchasController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CanchasController</servlet-name>
+    <url-pattern>/CanchasController</url-pattern>
+  </servlet-mapping>
+</web-app>
