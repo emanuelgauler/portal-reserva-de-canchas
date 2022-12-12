@@ -28,32 +28,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ReservaDeCanchas`.`MetadataCanchas`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReservaDeCanchas`.`MetadataCanchas` (
-  `idMetadata` INT NOT NULL AUTO_INCREMENT,
-  `idCancha` INT NOT NULL,
-  `valor` VARCHAR(55) NOT NULL,
-  `key` VARCHAR(30) NOT NULL,
-  PRIMARY KEY (`idMetadata`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `ReservaDeCanchas`.`Canchas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ReservaDeCanchas`.`Canchas` (
   `idCancha` INT NOT NULL AUTO_INCREMENT,
   `tipoCancha` VARCHAR(30) NOT NULL,
   `precio` DECIMAL NOT NULL,
-  `idMetadata` INT NOT NULL,
-  PRIMARY KEY (`idCancha`),
-  INDEX `idMetadata_idx` (`idMetadata` ASC) VISIBLE,
-  CONSTRAINT `idMetadata`
-    FOREIGN KEY (`idMetadata`)
-    REFERENCES `ReservaDeCanchas`.`MetadataCanchas` (`idMetadata`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idCancha`))
 ENGINE = InnoDB;
 
 
@@ -76,6 +57,24 @@ CREATE TABLE IF NOT EXISTS `ReservaDeCanchas`.`Reservas` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `idCancha`
+    FOREIGN KEY (`idCancha`)
+    REFERENCES `ReservaDeCanchas`.`Canchas` (`idCancha`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ReservaDeCanchas`.`MetadataCanchas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ReservaDeCanchas`.`MetadataCanchas` (
+  `idMetadata` INT NOT NULL AUTO_INCREMENT,
+  `valor` VARCHAR(55) NOT NULL,
+  `clave` VARCHAR(30) NOT NULL,
+  `idCancha` INT NULL,
+  PRIMARY KEY (`idMetadata`),
+  INDEX `idcanchafkmtdata_idx` (`idCancha` ASC) VISIBLE,
+  CONSTRAINT `idcanchafkmtdata`
     FOREIGN KEY (`idCancha`)
     REFERENCES `ReservaDeCanchas`.`Canchas` (`idCancha`)
     ON DELETE NO ACTION
