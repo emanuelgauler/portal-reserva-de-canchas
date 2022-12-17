@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `ReservaDeCanchas`.`Usuarios` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(30) NOT NULL,
   `apellido` VARCHAR(30) NOT NULL,
-  `email` VARCHAR(30) NOT NULL,
+  `email` VARCHAR(320) NOT NULL UNIQUE,
   `clave` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`idUsuario`))
 ENGINE = InnoDB;
