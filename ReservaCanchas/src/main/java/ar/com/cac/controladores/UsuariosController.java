@@ -52,7 +52,9 @@ public class UsuariosController extends HttpServlet {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			writer.println(String.format("{'status': 'failed', 'message':'%s'}",e.getMessage()));
+		} catch (NullPointerException e) {
+			writer.println(String.format("{'status':'failed', 'message':%s}", e.getMessage()));
 		}
 	}
 
@@ -94,6 +96,8 @@ public class UsuariosController extends HttpServlet {
 				result = String.format("result=fail&message=:%d: El correo electrónico <b>%s</b> ya está en uso",
 						e1.getErrorCode(), params.get("email_in"));
 			}
+		} catch (NullPointerException ex ) {
+			result = "result=fail&message=Servidor no está disponible";
 		}
 		response.sendRedirect(String.format("http://localhost:8080%s/registro.jsp?%s", request.getContextPath(), result));
 	}
