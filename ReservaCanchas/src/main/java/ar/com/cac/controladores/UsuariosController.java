@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,12 +15,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import ar.com.cac.config.DBConfig;
+import ar.com.cac.modelos.Usuario;
+import ar.com.cac.modelos.UsuarioDAO;
 
 /**
  * Servlet implementation class UsuariosController
  */
 public class UsuariosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UsuarioDAO users = new UsuarioDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -79,17 +81,10 @@ public class UsuariosController extends HttpServlet {
 		Map<String, String> params = request.getParameterMap().entrySet().stream()
 				.collect(Collectors.toMap(Map.Entry<String, String[]>::getKey,
 						(Map.Entry<String, String[]> e) -> e.getValue()[0]));
-
-		String query = "INSERT INTO Usuarios(apellido, nombre, email, clave) VALUES(?,?,?,?);";
 		String result = "result=fail&message=NO FINALIZADO";
+
 		try {
-			Connection con = DBConfig.connection_with("admin", "e.m.a.123");
-			PreparedStatement stmt = con.prepareStatement(query);
-			stmt.setString( 1, params.get("apellido_in") );
-			stmt.setString( 2, params.get("nombre_in") );
-			stmt.setString( 3, params.get("email_in") );
-			stmt.setString( 4, params.get("password_in") );
-			stmt.executeUpdate();
+			insert_user_with(params);
 			result = "result=success";
 		} catch (SQLException e1) {
 			if (e1.getMessage().contains("Duplicate")) {
@@ -100,6 +95,19 @@ public class UsuariosController extends HttpServlet {
 			result = "result=fail&message=Servidor no está disponible";
 		}
 		response.sendRedirect(String.format("http://localhost:8080%s/registro.jsp?%s", request.getContextPath(), result));
+	}
+
+	private void insert_user_with(Map<String, String> params) throws SQLException {
+		users.insert(user_from( params ));
+	}
+
+	private Usuario user_from(Map<String, String> params) {
+		Usuario u = new Usuario();
+		u.setApellido(params.get("apellido_in"));
+		u.setNombre(params.get("nombre_in"));
+		u.setMail(params.get("email_in"));
+		u.setClave(params.get("password_in"));
+		return u;
 	}
 
 }

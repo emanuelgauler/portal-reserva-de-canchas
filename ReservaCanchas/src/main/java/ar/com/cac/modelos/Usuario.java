@@ -1,5 +1,7 @@
 package ar.com.cac.modelos;
 
+import java.util.Map;
+
 public class Usuario {
 	
 	private int id;
@@ -49,6 +51,5 @@ public class Usuario {
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
-	
 
 }
