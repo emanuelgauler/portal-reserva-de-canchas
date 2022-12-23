@@ -37,23 +37,51 @@
 
         <main>
             <div class="container">
-                <div class="d-flex aligns-items-center justify-content-center vw-70 ps-5 border border-1">
-                    <form action="<%= request.getContextPath() %>/usuarios" method="post">
+                <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">Bootstrap</strong>
+                        <small class="text-muted">11 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toast-body" class="toast-body">
+                        Mensaje recibido después de enviar el formulario
+                    </div>
+                </div>
+                <div class="d-flex aligns-items-center justify-content-center vw-70 ps-5">
+                    <form action="<%= request.getContextPath() %>/usuarios" method="post" class="needs-validation" novalidate>
                         <div class="col-6">
-                            <label for="nombre_apellido_in" class="form-label">Nombre y Apellido</label>
-                            <input id="nombre_apellido_in" name="nombre_apellido_in" type="text" class="form-control"
+                            <label for="apellido_in" class="form-label">Apellido/s</label>
+                            <input id="apellido_in" name="apellido_in" type="text" class="form-control"
                                 aria-describedby="names_help_block" required />
                             <span id="names_help_block" class="form-text">
-                                Ingrese su/s nombre/s luego su/s apellido/s, separados por espacios
+                                Ingrese su/s apellido/s, separados por espacios
                             </span>
                         </div>
                         <div class="col-6">
-                            <label for="email_in" class="form-label">email</label>
+                            <label for="nombre_in" class="form-label">Nombre/s</label>
+                            <input id="nombre_in" name="nombre_in" type="text" class="form-control"
+                                aria-describedby="names_help_block" required />
+                            <span id="names_help_block" class="form-text">
+                                Ingrese su/s nombre/s, separados por espacios
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <label for="email_in" class="form-label">Correo electrónico</label>
                             <input id="email_in" name="email_in" type="email" class="form-control" aria-describedby="email_help_block"
                                 required />
                             <span id="email_help_block" class="form-text">
                                 Ingrese su correo electrónico. No se preocupe, no lo compartiremos.
                             </span>
+                            <div id="alert_email" class="d-none">
+                                <div class="alert alert-warning align-items-center" role="alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                    </svg>
+                                    <div>
+                                        El correo electrónico ya está registrado
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-6">
                             <label for="password_in" class="form-label">Contraseña</label>
@@ -79,6 +107,7 @@
                         </div>
                         <button id="confirm_button" class="col-3 btn btn-success">Confirmar</button>
                         <button class="col-3 btn btn-light">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="toastbtn">Toast</button>
                     </form>
                 </div>
             </div>
@@ -89,28 +118,65 @@
             crossorigin="anonymous"></script>
 
         <script>
-                let error_code = "<%= request.getParameter("last_error") %>";
-                let error_message = "<%= request.getParameter("error_message") %>";
+            let result         = '<%= request.getParameter("result") %>';
+            let message         = '<%= request.getParameter("message") %>';
 
-                if ( error_code != null && error_message != null ) {
-                    alert( error_code + "\n" + error_message );
-                }
-                    /*
+            function show_alert_email() { 
+                document.getElementById("alert_email")
+                    .className = 'd-block';
+                const email_in = document.getElementById("email_in");
+                email_in.className = "form-control border border-1 border-danger background-color";
+                email_in.style.outline = 'red solid 3px;';
+                email_in.focus();
+            }
+
+            function hide_alert_email() {
+                document.getElementById("alert_email")
+                    .className = 'd-none';
+                const email_in = document.getElementById("email_in");
+                email_in.className = "form-control border border-1";
+                email_in.style.outline = '';
+            }
+
+            function toast_text() {
+                return document.getElementById("toast-body");
+            }
+
+            if( result === "success") {
+                toast_text().innerHTML = "Se registró con éxito";
+                show_toast();
+            }
+            if( result === "fail" ) {
+                toast_text().innerHTML = message;
+                show_toast();
+            }            
+            
+            function show_toast() {
+                var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+                var toastList = toastElList.map(function(toastEl) {
+                    return new bootstrap.Toast(toastEl)
+                })
+                toastList.forEach(toast => toast.show()) 
+            }
+            
+            function notify_email_status( data ) {
+                if( data.exists ) show_alert_email();
+                else hide_alert_email();
+                console.log(data.exists ? "el email ya existe" : "el email aún no se registró" );
+            }
+            
             email_in.onchange = (event) => {
                 let value = event.target.value;
+                let url = "http://localhost:8080/Reserva_Canchas/usuarios?email="+value;
+                console.log( url );
                 if (value.length > 0) {
-                    fetch(`http://localhost:9000/Reserva_Canchas/usuarios?query=find&email=${value}`)
+                    fetch(url)
                         .then(response => response.json())
-                        .then(data => alert(data.message))
+                        .then(data => notify_email_status(data) )
                 }
+                /*
+                */
             }
-            confirm_button.addEventListener("click", function (e) {
-                fetch("http://localhost:9000/Reserva_Canchas/usuarios")
-                .then( (response) => response.json() )
-                .then( (data) => alert(data.message) )
-                .catch( (error) => console.log( error ) );
-            })
-            */
         </script>
     </body>
 
