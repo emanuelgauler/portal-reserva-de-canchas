@@ -60,20 +60,6 @@ public class UsuariosController extends HttpServlet {
 		}
 	}
 
-	private String convert_to_where_clause(Map<String, String> params) {
-		return params.entrySet().stream()
-				.map((Map.Entry<String, String> e) -> String.format("%s='%s'", e.getKey(), e.getValue()))
-				.collect(Collectors.joining(" AND ", "WHERE ", ""));
-	}
-
-	private Map<String, String> transform_query_string(Map<String, String[]> params) {
-		Map<String, String> result = new HashMap<>();
-		for(var entry: params.entrySet() ) {
-			result.put( entry.getKey(), entry.getValue()[0] );
-		}
-		return result;
-	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -81,11 +67,10 @@ public class UsuariosController extends HttpServlet {
 		Map<String, String> params = request.getParameterMap().entrySet().stream()
 				.collect(Collectors.toMap(Map.Entry<String, String[]>::getKey,
 						(Map.Entry<String, String[]> e) -> e.getValue()[0]));
-		String result = "result=fail&message=NO FINALIZADO";
+		String result = "result=success";
 
 		try {
 			insert_user_with(params);
-			result = "result=success";
 		} catch (SQLException e1) {
 			if (e1.getMessage().contains("Duplicate")) {
 				result = String.format("result=fail&message=:%d: El correo electrónico <b>%s</b> ya está en uso",
@@ -108,6 +93,20 @@ public class UsuariosController extends HttpServlet {
 		u.setMail(params.get("email_in"));
 		u.setClave(params.get("password_in"));
 		return u;
+	}
+
+	private String convert_to_where_clause(Map<String, String> params) {
+		return params.entrySet().stream()
+				.map((Map.Entry<String, String> e) -> String.format("%s='%s'", e.getKey(), e.getValue()))
+				.collect(Collectors.joining(" AND ", "WHERE ", ""));
+	}
+
+	private Map<String, String> transform_query_string(Map<String, String[]> params) {
+		Map<String, String> result = new HashMap<>();
+		for(var entry: params.entrySet() ) {
+			result.put( entry.getKey(), entry.getValue()[0] );
+		}
+		return result;
 	}
 
 }

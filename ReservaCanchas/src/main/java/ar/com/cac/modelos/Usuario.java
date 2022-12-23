@@ -1,7 +1,5 @@
 package ar.com.cac.modelos;
 
-import java.util.Map;
-
 public class Usuario {
 	
 	private int id;

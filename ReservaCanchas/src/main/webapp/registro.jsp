@@ -35,8 +35,8 @@
             </header>
         </div>
 
-        <main>
-            <div class="container">
+        <main class="border border-1 ps-5">
+            <div class="container border border-1 ps-5">
                 <div id="toast" class="toast position-absolute top-25 start-50 translate-middle-x" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="toast-header">
                         <strong class="me-auto">Registro del Usuario</strong>
