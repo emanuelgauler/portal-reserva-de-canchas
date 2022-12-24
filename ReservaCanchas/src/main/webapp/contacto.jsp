@@ -35,10 +35,13 @@
             </div>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                <a class="nav-link cl-link-menu-select fw-semibold fs-4 text-dark " aria-current="page" href="./cancha-futbol.jsp">Futbol</a>
+                <a class="nav-link cl-link-menu-select fw-semibold fs-4 text-dark " aria-current="page" href="./futbol">Futbol</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./cancha-paddel.jsp">Padel</a>
+                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./paddel">Padel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./misreservas">Mis Reservas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./contacto.jsp">Contacto</a>

@@ -13,58 +13,28 @@
             integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
             crossorigin="anonymous">
         <link rel="stylesheet" href="/Reserva_Canchas/css/Style.css">
+        <!-- <script src="http://code.jquery.com/jquery-latest.js"> -->
     </head>
     <body>
-        <header>
-            <script
+       <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="./index.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <img src="/Reserva_Canchas/images/LogoPuntoFutbol.247x32.png" alt="">
+            </a>
+			<script
                 src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
                 crossorigin="anonymous"></script>
-            <nav class="navbar navbar-expand-sm bg-light nav-bg-color">
-                <div  class="container-fluid">
-
-                    <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav" aria-controls="navbarNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <div class="d-flex justify-content-center">
-                            <a href="./index.jsp">
-                                <img src="/Reserva_Canchas/images/LogoPuntoFutbol.png"
-                                    alt="LogoPuntoFutbol"
-                                    class="img-logo-menu"/>
-                                <div hidden>
-                                    <h1 class="card-title fw-bolder ps-3 pt-3">Punto
-                                        Futbol</h1></div>
-                            </a>
-                        </div>
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link cl-link-menu-select
-                                    fw-semibold fs-4 text-dark "
-                                    aria-current="page"
-                                    href="./cancha-futbol.jsp">Fútbol</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link cl-link-menu fw-semibold fs-4
-                                    text-dark" href="./cancha-paddle.jsp">Padel</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link cl-link-menu fw-semibold fs-4
-                                    text-dark" href="./contacto.jsp">Contacto</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link cl-link-menu fw-semibold fs-4
-                                    text-dark " href="./login.jsp">Iniciar
-                                    Sesión</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <ul  class="nav nav-pills">
+                <li class="nav-item"><a href="./misreservas" class="nav-link" style="color: green;">Fútbol</a></li>
+                <li class="nav-item"><a href="./paddel" class="nav-link" style="color: green;">Padel</a></li>                
+                  <li class="nav-item"><span class="nav-link active" aria-current="page"
+                        style="background-color: green;">Mis Reservas</span></li>
+                <li class="nav-item"><a href="./contacto.jsp" class="nav-link" style="color: green;">Contacto</a></li>
+                                <li class="nav-item"><a href="./login.jsp" class="nav-link" style="color: green;">Iniciar Sesión</a></li>
+            </ul>
         </header>
+    </div>
         <main>
 
             <h1 class="text-center mt-5 fw-semibold">Confirmar Reserva</h1>
@@ -73,8 +43,8 @@
                 <div class="containerReserva
                     justify-content-center rounded-3">
 
-                    <div class="row g-2 justify-content-center">
-                        <div class="alert alert-secondary text-center"
+                    <div class="row g-2 justify-content-center ">
+                        <div class="alert alert-secondary text-center text-capitalize" 
                             role="alert">
                             <span style="color: green;" id="lbltipoCancha"></span>
                             <div id="lbltipo">
@@ -139,7 +109,7 @@
 
                     <div class="row g-2">
                         <button type="button" class="btn btn-success"
-                            id="btnConfirmar"
+                            id="btnConfirmar" onclick="reservarCancha()"
                             data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop">Confirmar</button>
                     </div>
@@ -163,7 +133,7 @@
                                 </div>
                                 <div class="modal-body fst-italic">
                                     <!--<b><br><span id="lbltipoCancha" ></span></b> -->
-                                    <div id="cancha" style="color: green;">
+                                    <div class="text-capitalize" id="cancha" style="color: green;">
                                         <b><span> Cancha: </span></b>
                                         <b><span id="lbltipoCancha1"></span></b>
                                     </div>
@@ -200,10 +170,11 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn
-                                        btn-outline-success"
+                                    <button type="button"  class="btn
+                                        btn-outline-success" onclick="misReservas()"
                                         data-bs-dismiss="modal">Cerrar</button>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

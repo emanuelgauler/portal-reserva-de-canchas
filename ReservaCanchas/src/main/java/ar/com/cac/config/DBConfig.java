@@ -10,7 +10,7 @@ public class DBConfig {
 	private static  final String SERVER = "localhost";
 	private static  final String BASE = "reservadecanchas";
 	private static  final String USER = "root";
-	private static  final String PASSWORD = "12346";
+	private static  final String PASSWORD = "Paola7910";
 	private static  final Integer PORT = 3306;
 	
 	public static Connection getConexion() throws SQLException {
@@ -20,8 +20,9 @@ public class DBConfig {
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			
 		}
-		var conectionString = SERVER+"/"+BASE+"&useSSL=false";
+		//var conectionString = SERVER+"/"+BASE+"&useSSL=false";
 		var url = String.format("jdbc:mysql://%s:%d/%s?useSSL=false", SERVER, PORT, BASE);
 		return DriverManager.getConnection(url,USER,PASSWORD);
 	}

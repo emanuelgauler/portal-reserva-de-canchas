@@ -38,16 +38,19 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             
-            <a class="nav-link cl-link-menu-select fw-semibold fs-4 text-dark " aria-current="page" href="./cancha-futbol.jsp">Fútbol</a>
+            <a class="nav-link cl-link-menu-select fw-semibold fs-4 text-body-tertiary " aria-current="page" href="./futbol">Fútbol</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./cancha-paddel.jsp">Padel</a>
+            <a class="nav-link cl-link-menu fw-semibold fs-4 text-body-tertiary" href="./paddel">Padel</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./contacto.jsp">Contacto</a>
+            <a class="nav-link cl-link-menu fw-semibold fs-4 text-body-tertiary" href="./misreservas">Mis Reservas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark " href="./login.jsp">Iniciar Sesión</a>
+            <a class="nav-link cl-link-menu fw-semibold fs-4 text-body-tertiary" href="./contacto.jsp">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cl-link-menu fw-semibold fs-4 text-body-tertiary" href="./login.jsp">Iniciar Sesión</a>
           </li>
         </ul>
       </div>
@@ -87,7 +90,7 @@
                 <img src="/Reserva_Canchas/images/FutbolGrid.jpg" class="card-img ima-opacity">
                 <div class="card-img-overlay text-margin-bs">                 
                 <h2 class="fw-semibold fs-1 p-5 fs-1 text-center">Fútbol</h2>  
-                <a class="btn btn-outline-light" href="./cancha-futbol.jsp" role="button">Reserva tu cancha</a>                 
+                <a class="btn btn-outline-light" href="./futbol" role="button">Reserva tu cancha</a>                 
             </div>
             </div>
         </div>
@@ -97,7 +100,7 @@
                   <img src="/Reserva_Canchas/images/FutsalGrid.jpg" class="card-img ima-opacity">
                   <div class="card-img-overlay text-margin-bs">
                     <h2 class="fw-semibold fs-1 p-5 fs-1 text-center">Fútbol Sala</h2>  
-                    <a class="btn btn-outline-light" href="./cancha-futbol.jsp" role="button">Reserva tu cancha</a>  
+                    <a class="btn btn-outline-light" href="./futbol" role="button">Reserva tu cancha</a>  
                   </div>
               </div>
 
@@ -110,7 +113,7 @@
                 <img src="/Reserva_Canchas/images/padelGrid.jpg" class="card-img ima-opacity">
                 <div class="card-img-overlay text-margin-bs">
                     <h2 class="fw-semibold fs-1 p-5 fs-1 text-center">Padel</h2>  
-                    <a class="btn btn-outline-light" href="./cancha-paddel.jsp" role="button">Reserva tu cancha</a>  
+                    <a class="btn btn-outline-light" href="./paddel" role="button">Reserva tu cancha</a>  
                 </div>
             </div>
         </div>
