@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="./index.jsp"
+                <a href="index.jsp"
                     class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <img src="/Reserva_Canchas/images/LogoPuntoFutbol.247x32.png" alt="">
                 </a>
@@ -35,57 +35,56 @@
             </header>
         </div>
 
-        <main class="border border-1 ps-5">
-            <div class="container border border-1 ps-5">
-                <div id="toast" class="toast position-absolute top-25 start-50 translate-middle-x" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <strong class="me-auto">Registro del Usuario</strong>
-                        <!--<small class="text-muted">11 mins ago</small>-->
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div id="toast-body" class="toast-body">
-                        Mensaje recibido después de enviar el formulario
-                    </div>
-                </div>
-                <div class="d-flex aligns-items-center justify-content-center vw-70 ps-5">
+        <div id="toast" class="toast position-absolute top-25 start-50 translate-middle-x" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Registro del Usuario</strong>
+                <!--<small class="text-muted">11 mins ago</small>-->
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="toast-body" class="toast-body">
+                Mensaje recibido después de enviar el formulario
+            </div>
+        </div>
+        
+        <main class="container">
+            <div class="m-4 ps-1 d-flex justify-content-center" style="height: 512px;">
+                <div class="pt-2 px-1 rounded-3" style="width: 600px; height: auto; background-color: lightgreen;">
                     <form action="<%= request.getContextPath() %>/usuarios" method="post" class="needs-validation" novalidate>
-                        <div class="col-6">
-                            <label for="apellido_in" class="form-label">Apellido/s</label>
-                            <input id="apellido_in" name="apellido_in" type="text" class="form-control"
-                                aria-describedby="names_help_block" required />
-                            <span id="names_help_block" class="form-text">
-                                Ingrese su/s apellido/s, separados por espacios
-                            </span>
-                        </div>
-                        <div class="col-6">
-                            <label for="nombre_in" class="form-label">Nombre/s</label>
-                            <input id="nombre_in" name="nombre_in" type="text" class="form-control"
-                                aria-describedby="names_help_block" 
-                                pattern="[a-zA-Z0-9]{8,20}" title="entre 8 y 20 caracteres sin espacios o caracteres especiales" required />
-                            <span id="names_help_block" class="form-text">
-                                Ingrese su/s nombre/s, separados por espacios
-                            </span>
-                        </div>
-                        <div class="col-6">
-                            <label for="email_in" class="form-label">Correo electrónico</label>
-                            <input id="email_in" name="email_in" type="email" class="form-control" aria-describedby="email_help_block"
-                                required />
-                            <span id="email_help_block" class="form-text">
-                                Ingrese su correo electrónico. No se preocupe, no lo compartiremos.
-                            </span>
-                            <div id="alert_email" class="d-none">
-                                <div class="alert alert-warning row align-items-center" role="alert">
-                                    <div class="col">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                    </svg>
-                                    </div>
-                                    <small class="col-10">
-                                        El correo electrónico ya está registrado
-                                    </small>
-                                </div>
+                        <div class="row mb-4 justify-content-center border border-1">
+                            <label for="apellido_in" class="col-sm-2 col-form-label border border-1">Apellidos</label>
+                            <div class="col-sm-10">
+                                <input id="apellido_in" name="apellido_in" type="text" class="form-control"
+                                placeholder="Ingrese su/s apellido/s separados por espacios" required />
                             </div>
                         </div>
+
+                        <div class="row mb-4">
+                            <label for="nombre_in" class="col-sm-2 col-form-label">Nombres</label>
+                            <div class="col-sm-10">
+                                <input id="nombre_in" name="nombre_in" type="text" class="form-control"
+                                placeholder="Ingrese su/s nombre/s separados por espacios" required />
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <label for="email_in" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input id="email_in" name="email_in" type="email" class="form-control"
+                                placeholder="Ingrese su correo electrónico" required />
+                            </div>
+                        </div>
+
+                        <div id="alert_email" class="row mb-4 alert alert-warning align-items-center border border-1 p-1" role="alert">
+                            <div class="col-sm-2 border border-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </div>
+                            <small class="col-sm-8 border border-1">El correo electrónico ya está registrado</small>
+                        </div>
+                        
+
+                        <!--
                         <div class="col-6">
                             <label for="password_in" class="form-label">Contraseña</label>
                             <input type="password" id="password_in" name="password_in" class="form-control"
@@ -107,8 +106,11 @@
                                 </div>
                             </div>
                         </div>
-                        <button id="confirm_button" class="col-3 btn btn-success">Confirmar</button>
-                        <button class="col-3 btn btn-light">Cancelar</button>
+                        -->
+                        <div class="row">
+                        	<button id="confirm_button" class="col-3 btn btn-success">Confirmar</button>
+                        	<button class="col-3 btn btn-light">Cancelar</button>
+                        </div>
                     </form>
                 </div>
             </div>
