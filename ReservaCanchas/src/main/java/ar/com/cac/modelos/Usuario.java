@@ -49,6 +49,5 @@ public class Usuario {
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
-	
 
 }
