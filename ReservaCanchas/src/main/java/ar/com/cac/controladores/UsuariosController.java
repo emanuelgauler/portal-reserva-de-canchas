@@ -43,21 +43,7 @@ public class UsuariosController extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		/*
 		*/
-		try {
-			Connection con = DBConfig.connection_with("admin", "e.m.a.123");
-			Statement stmt = con.createStatement();
-			String where_clause = convert_to_where_clause(params);
-			ResultSet result = stmt.executeQuery(
-					String.format("select json_object('exists', count(email) > 0) from Usuarios %s;", where_clause));
-			while (result.next()) {
-				writer.println( result.getString(1) );
-			}
-
-		} catch (SQLException e) {
-			writer.println(String.format("{'status': 'failed', 'message':'%s'}",e.getMessage()));
-		} catch (NullPointerException e) {
-			writer.println(String.format("{'status':'failed', 'message':%s}", e.getMessage()));
-		}
+		writer.println( users.find_email_from( params ) );
 	}
 
 	/**
@@ -93,12 +79,6 @@ public class UsuariosController extends HttpServlet {
 		u.setMail(params.get("email_in"));
 		u.setClave(params.get("password_in"));
 		return u;
-	}
-
-	private String convert_to_where_clause(Map<String, String> params) {
-		return params.entrySet().stream()
-				.map((Map.Entry<String, String> e) -> String.format("%s='%s'", e.getKey(), e.getValue()))
-				.collect(Collectors.joining(" AND ", "WHERE ", ""));
 	}
 
 	private Map<String, String> transform_query_string(Map<String, String[]> params) {
