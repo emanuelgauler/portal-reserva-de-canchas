@@ -12,11 +12,16 @@ import ar.com.cac.config.DBConfig;
 
 public class UsuarioDAO {
 	
+	private Connection connection() {
+		Connection con = DBConfig.connection_with("admin", "e.m.a.123");
+		return con;
+	}
+	
 	public UsuarioDAO(){}
 	
 	public void insert( Usuario u ) throws SQLException {
 		String query = "INSERT INTO Usuarios(apellido, nombre, email, clave) VALUES(?,?,?,?);";
-		Connection con = DBConfig.connection_with("admin", "e.m.a.123");
+		Connection con = connection();
 			PreparedStatement stmt = con.prepareStatement(query);
 			stmt.setString( 1, u.getApellido() );
 			stmt.setString( 2, u.getNombre() );
@@ -25,10 +30,11 @@ public class UsuarioDAO {
 			stmt.executeUpdate();
 	}
 
+
 	public String find_email_from(Map<String, String> params) {
 		String response = "";
 		try {
-			Connection con = DBConfig.connection_with("admin", "e.m.a.123");
+			Connection con = connection();
 			Statement stmt = con.createStatement();
 			String where_clause = convert_to_where_clause(params);
 			ResultSet result = stmt.executeQuery(
