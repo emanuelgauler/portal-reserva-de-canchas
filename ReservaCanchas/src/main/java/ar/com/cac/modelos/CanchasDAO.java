@@ -45,25 +45,27 @@ public class CanchasDAO implements DAO<Canchas>{
 			// TODO Auto-generated method stub
 			List<Canchas> canchas= new ArrayList<Canchas>();
 			var conn = DBConfig.getConexion();
-			String query = "select c.idCancha, c.tipocancha, c.precio, m.clave, m.valor";
-			query += "from canchas c inner join metadatacanchas m"; 
-			query += "on c.idCancha = m.idCancha";
+			String query = "select c.idCancha, c.tipocancha, c.precio, m.clave, m.valor from canchas c inner join metadatacanchas m on c.idCancha = m.idCancha";
+			//query += "from canchas c inner join metadatacanchas m"; 
+			//query += "on c.idCancha = m.idCancha";
 			
 			var ps = conn.prepareStatement(query);
 			var rs = ps.executeQuery();
 			
-			if(rs.next())
+			if(rs!=null)
 			{
-				Canchas cancha = new Canchas();
-				cancha.setIdCancha(rs.getInt("idCancha"));
-				cancha.setTipoCancha(rs.getString("tipoCancha"));
-				cancha.setPrecio(rs.getDouble("precio"));
-				cancha.setClave(rs.getString("clave"));
-				cancha.setValor(rs.getString("valor"));			
-				canchas.add(cancha);
-			}
-			
+				while (rs.next()) {
+					Canchas cancha = new Canchas();
+					cancha.setIdCancha(rs.getInt("idCancha"));
+					cancha.setTipoCancha(rs.getString("tipoCancha"));
+					cancha.setPrecio(rs.getDouble("precio"));
+					cancha.setClave(rs.getString("clave"));
+					cancha.setValor(rs.getString("valor"));			
+					canchas.add(cancha);									
+				}
+			}			
 			return canchas;
+			
 		}
 
 		@Override
@@ -86,8 +88,24 @@ public class CanchasDAO implements DAO<Canchas>{
 
 		@Override
 		public Canchas getById(int id) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
+			Canchas canchas= new Canchas();
+			var conn = DBConfig.getConexion();
+			String query = "select c.idCancha, c.tipocancha, c.precio, m.clave, m.valor from canchas c inner join metadatacanchas m on c.idCancha = m.idCancha limit 1";
+			//query += "from canchas c inner join metadatacanchas m"; 
+			//query += "on c.idCancha = m.idCancha";
+			
+			var ps = conn.prepareStatement(query);
+			var rs = ps.executeQuery();
+			
+			if(rs.next())
+			{
+				canchas.setIdCancha(rs.getInt("idCancha"));
+				canchas.setTipoCancha(rs.getString("tipoCancha"));
+				canchas.setPrecio(rs.getDouble("precio"));
+				canchas.setClave(rs.getString("clave"));
+				canchas.setValor(rs.getString("valor"));			
+			}			
+			return canchas;
 		}
 		
 	}

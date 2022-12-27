@@ -44,4 +44,54 @@
     <servlet-name>CanchasController</servlet-name>
     <url-pattern>/CanchasController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>futbolController</display-name>
+    <servlet-name>futbolController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.futbolController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>futbolController</servlet-name>
+    <url-pattern>/futbolController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>paddelController</display-name>
+    <servlet-name>paddelController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.paddelController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>paddelController</servlet-name>
+    <url-pattern>/paddelController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>reservasController</display-name>
+    <servlet-name>reservasController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.reservasController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reservasController</servlet-name>
+    <url-pattern>/reservasController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>misReservas</display-name>
+    <servlet-name>misReservas</servlet-name>
+    <servlet-class>ar.com.cac.controladores.misReservas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>misReservas</servlet-name>
+    <url-pattern>/misReservas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>misReservasController</display-name>
+    <servlet-name>misReservasController</servlet-name>
+    <servlet-class>ar.com.cac.controladores.misReservasController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>misReservasController</servlet-name>
+    <url-pattern>/misReservasController</url-pattern>
+  </servlet-mapping>
 </web-app>
