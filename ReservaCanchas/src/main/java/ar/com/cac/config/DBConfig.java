@@ -10,7 +10,8 @@ public class DBConfig {
 	private static  final String SERVER = "localhost";
 	private static  final String BASE = "ReservaDeCanchas";
 	private static  final String USER = "root";
-	private static  final String PASSWORD = "Paola7910";
+	//private static  final String PASSWORD = "Paola7910";
+	private static  final String PASSWORD = "e.m.a.123";
 	private static  final Integer PORT = 3306;
 	
 	public static Connection getConexion() throws SQLException {
