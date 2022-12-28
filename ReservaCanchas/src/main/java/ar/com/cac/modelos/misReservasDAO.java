@@ -33,15 +33,27 @@ public class misReservasDAO  implements DAO<misReservas>{
 	}
 
 	@Override
+<<<<<<< Updated upstream
 	public List<misReservas> getAll() throws SQLException {
+=======
+	public List<misReservas> getAllById(int id) throws SQLException {
+>>>>>>> Stashed changes
 		List<misReservas> misReservas= new ArrayList<misReservas>();
 		var conn = DBConfig.getConexion();
 		String query = "select r.idUsuario, c.type, c.tipoCancha, c.cantidadPorEquipo, c.medidas, r.fecha, r.hora, r.totalReserva\r\n"
 				+ "from reservas r inner join canchas c on r.idCancha= c.idCancha\r\n"
+<<<<<<< Updated upstream
 				+ "where r.idUsuario = 1";
 	
 		
 		var ps = conn.prepareStatement(query);
+=======
+				+ "where r.idUsuario = ?";
+	
+		
+		var ps = conn.prepareStatement(query);
+		ps.setInt(1, id);
+>>>>>>> Stashed changes
 		var rs = ps.executeQuery();
 		
 		if(rs!=null)
@@ -64,6 +76,16 @@ public class misReservasDAO  implements DAO<misReservas>{
 		
 	}
 
+<<<<<<< Updated upstream
+=======
+	@Override
+	public List<misReservas> getAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+>>>>>>> Stashed changes
 	}
 	
 	

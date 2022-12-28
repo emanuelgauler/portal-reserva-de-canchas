@@ -6,6 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+<<<<<<< Updated upstream
+=======
+import jakarta.servlet.http.HttpSession;
+
+>>>>>>> Stashed changes
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -33,6 +38,7 @@ public class MisreservasController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
+<<<<<<< Updated upstream
 			misReservasDAO mrDAO = new misReservasDAO();		
 			var misCanchas = mrDAO.getAll();
 			
@@ -43,6 +49,27 @@ public class MisreservasController extends HttpServlet {
 		    request.setAttribute("misCanchas", misCanchas);
 		    RequestDispatcher rd = request.getRequestDispatcher("reservas.jsp");
 		    rd.forward(request, response);
+=======
+			misReservasDAO mrDAO = new misReservasDAO();	
+			
+			HttpSession session = request.getSession();
+			Integer userId = (Integer) session.getAttribute("userId");
+			
+			if(userId == null)
+			{
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}else {
+				var misCanchas = mrDAO.getAllById(userId);			
+				
+			    response.setContentType("application/json");
+			    response.setCharacterEncoding("UTF-8");		    
+			    
+			    request.setAttribute("misCanchas", misCanchas);
+			    RequestDispatcher rd = request.getRequestDispatcher("reservas.jsp");
+			    rd.forward(request, response);
+			}							   
+>>>>>>> Stashed changes
 		    
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -39,6 +39,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./paddel">Padel</a>
+<<<<<<< Updated upstream
+            </li>
+            <li class="nav-item">
+                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./misreservas">Mis Reservas</a>
+=======
+>>>>>>> Stashed changes
             </li>
             <li class="nav-item">
                 <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./misreservas">Mis Reservas</a>
@@ -46,9 +52,10 @@
             <li class="nav-item">
                 <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark" href="./contacto.jsp">Contacto</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link cl-link-menu fw-semibold fs-4 text-dark " href="./login.jsp">Iniciar Sesión</a>
-            </li>
+            <% if (Integer.parseInt(session.getAttribute("userId").toString()) > 0) { %>							
+							<% } else { %>
+							<li class="nav-item"><a href="./login.jsp" class="nav-link" style="color: green;">Iniciar Sesión</a></li>
+							<% } %>   
             </ul>
         </div>
         </div>
