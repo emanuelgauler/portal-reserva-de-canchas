@@ -24,7 +24,7 @@ public class DBConfig {
 			
 		}
 		//var conectionString = SERVER+"/"+BASE+"&useSSL=false";
-		var url = String.format("jdbc:mysql://%s:%d/%s?useSSL=false", SERVER, PORT, BASE);
+		var url = String.format("jdbc:mysql://%s:%d/%s?allowPublicKeyRetrieval=true&useSSL=false", SERVER, PORT, BASE);
 		return DriverManager.getConnection(url,USER,PASSWORD);
 	}
 	

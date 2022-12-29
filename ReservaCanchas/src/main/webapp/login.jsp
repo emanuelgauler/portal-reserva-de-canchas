@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <form class="row g-3 p-5 d-flex justify-content-center text-secondary" method="post" action="ingreso">
+    <form class="row g-3 p-5 d-flex justify-content-center text-secondary" method="post" action="login">
       <div class="margin-form rounded-5 p-5">
         <div class="container">
           <div class="row justify-content-center">
@@ -29,10 +29,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
+           <div class="col">
             <div class="input-group flex-nowrap">
               <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-circle"></i></span>
-              <input id="email_in" name="email_in" type="text" class="form-control" placeholder="Usuario"
+              <input id="mail" name="mail" type="text" class="form-control" placeholder="Usuario"
                 aria-label="Username" aria-describedby="addon-wrapping">
             </div>
           </div>
@@ -41,7 +41,7 @@
           <div class="col">
             <div class="input-group flex-nowrap">
               <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
-              <input id="password_in" type="password" name="password_in" class="form-control" placeholder="Contraseña"
+              <input id="password" type="password" name="password" class="form-control" placeholder="Contraseña"
                 aria-label="Password" aria-describedby="addon-wrapping">
             </div>
           </div>

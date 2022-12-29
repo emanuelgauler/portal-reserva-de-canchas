@@ -83,4 +83,10 @@ public class futbolDAO implements DAO<futbol> {
 		}			
 		return futbol;
 	}
+
+	@Override
+	public List<futbol> getAllById(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -11,20 +11,22 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import ar.com.cac.modelos.futbolDAO;
-import ar.com.cac.modelos.misReservasDAO;
+import ar.com.cac.modelos.PDAO;
+import ar.com.cac.modelos.Reservas;
+import ar.com.cac.modelos.UsuarioDAO;
+import ar.com.cac.modelos.personaDAO;
 
 /**
- * Servlet implementation class misReservasController
+ * Servlet implementation class loginController
  */
-@WebServlet("/misreservas")
-public class MisreservasController extends HttpServlet {
+@WebServlet("/login")
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MisreservasController() {
+    public LoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,32 +36,7 @@ public class MisreservasController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		try {
-			misReservasDAO mrDAO = new misReservasDAO();	
-			
-			HttpSession session = request.getSession();
-			Integer userId = (Integer) session.getAttribute("userId");
-			
-			if(userId == null)
-			{
-				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-				rd.forward(request, response);
-			}else {
-				var misCanchas = mrDAO.getAllById(userId);			
-				
-			    response.setContentType("application/json");
-			    response.setCharacterEncoding("UTF-8");		    
-			    
-			    request.setAttribute("misCanchas", misCanchas);
-			    RequestDispatcher rd = request.getRequestDispatcher("reservas.jsp");
-			    rd.forward(request, response);
-			}							   
-		    
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("error:" + e);
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -67,7 +44,26 @@ public class MisreservasController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String password = request.getParameter("password");
+		String email = request.getParameter("mail");
+		personaDAO PerDAO = new personaDAO();
+		try {
+			var id = PerDAO.GetByEmailAndPwd(email, password);
+			if(id != 0)
+			{
+				HttpSession session = request.getSession();
+				session.setAttribute("userId", id);
+			}else 
+			{
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");		
+		rd.forward(request, response);
+		
 	}
 
 }

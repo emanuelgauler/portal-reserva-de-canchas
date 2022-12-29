@@ -82,5 +82,11 @@ public class paddelDAO implements DAO<paddel>{
 		return paddel;
 	}
 
+	@Override
+	public List<paddel> getAllById(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

@@ -14,4 +14,6 @@ public interface DAO<T> {
 	public T getById(int id) throws SQLException;
 
 	public List<T> getAll() throws SQLException;
+	
+	public List<T> getAllById(int id) throws SQLException;
 }

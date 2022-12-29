@@ -107,6 +107,12 @@ public class CanchasDAO implements DAO<Canchas>{
 			}			
 			return canchas;
 		}
+
+		@Override
+		public List<Canchas> getAllById(int id) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
 	}
 

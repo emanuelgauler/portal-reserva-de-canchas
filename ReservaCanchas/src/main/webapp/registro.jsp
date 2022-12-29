@@ -159,6 +159,7 @@
                 toast.className += " bg-success text-white";
                 toast_text().innerHTML = "Se registró con éxito";
                 show_toast();
+                window.location.replace("./login.jsp");
             }
             if (result === "fail") {
                 const toast = document.getElementById("toast");

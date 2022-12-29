@@ -21,6 +21,7 @@ import ar.com.cac.modelos.UsuarioDAO;
 /**
  * Servlet implementation class UsuariosController
  */
+@WebServlet("/usuarios")
 public class UsuariosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UsuarioDAO users = new UsuarioDAO();

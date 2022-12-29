@@ -27,7 +27,10 @@
                 <li class="nav-item"><a href="./paddel" class="nav-link" style="color: green;">Padel</a></li>
                 <li class="nav-item"><a href="./misreservas" class="nav-link" style="color: green;">Mis Reservas</a></li>
                 <li class="nav-item"><a href="./contacto.jsp" class="nav-link" style="color: green;">Contacto</a></li>
-                <li class="nav-item"><a href="./login.jsp" class="nav-link" style="color: green;">Iniciar Sesión</a></li>
+               <% if (Integer.parseInt(session.getAttribute("userId").toString()) > 0) { %>							
+							<% } else { %>
+							<li class="nav-item"><a href="./login.jsp" class="nav-link" style="color: green;">Iniciar Sesión</a></li>
+							<% } %>   
             </ul>
         </header>
     </div>

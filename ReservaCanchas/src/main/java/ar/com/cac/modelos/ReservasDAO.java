@@ -56,4 +56,10 @@ public class ReservasDAO implements DAO<Reservas> {
 		return null;
 	}
 
+	@Override
+	public List<Reservas> getAllById(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
