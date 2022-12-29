@@ -49,7 +49,6 @@ public class CanchasController extends HttpServlet {
 		    rd.forward(request, response);
 		    
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

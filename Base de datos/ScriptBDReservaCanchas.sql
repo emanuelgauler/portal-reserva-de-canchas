@@ -51,22 +51,22 @@ AUTO_INCREMENT = 2;
 -- -----------------------------------------------------
 -- Table `reservadecanchas`.`reservas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `reservadecanchas`.`reservas` (
-  `idReserva` INT NOT NULL AUTO_INCREMENT,
-  `fecha` DATE NOT NULL,
-  `hora` TIME NOT NULL,
-  `totalReserva` DECIMAL(10,0) NOT NULL,
-  `idUsuario` INT NOT NULL,
-  `idCancha` INT NOT NULL,
-  PRIMARY KEY (`idReserva`),
-  INDEX `idUsuario_idx` (`idUsuario` ASC) VISIBLE,
-  INDEX `idCancha_idx` (`idCancha` ASC) VISIBLE,
-  CONSTRAINT `idCancha`
-    FOREIGN KEY (`idCancha`)
-    REFERENCES `reservadecanchas`.`canchas` (`idCancha`),
-  CONSTRAINT `idUsuario`
-    FOREIGN KEY (`idUsuario`)
-    REFERENCES `reservadecanchas`.`usuarios` (`idUsuario`))
+CREATE TABLE IF NOT EXISTS 'reservadecanchas'.'reservas' (
+  'idReserva' INT NOT NULL AUTO_INCREMENT,
+  'fecha' DATE NOT NULL,
+  'hora' TIME NOT NULL,
+  'totalReserva' DECIMAL(10,0) NOT NULL,
+  'idUsuario' INT NOT NULL,
+  'idCancha' INT NOT NULL,
+  PRIMARY KEY ('idReserva'),
+  INDEX 'idUsuario_idx' ('idUsuario' ASC) VISIBLE,
+  INDEX 'idCancha_idx' ('idCancha' ASC) VISIBLE,
+  CONSTRAINT 'idCancha'
+    FOREIGN KEY ('idCancha')
+    REFERENCES 'reservadecanchas'.'canchas' ('idCancha'),
+  CONSTRAINT 'idUsuario'
+    FOREIGN KEY ('idUsuario')
+    REFERENCES 'reservadecanchas'.'usuarios' ('idUsuario'))
 ENGINE = InnoDB
 AUTO_INCREMENT = 8;
 

@@ -13,6 +13,11 @@ import ar.com.cac.config.DBConfig;
 
 public class UsuarioDAO {
 	
+	private Connection connection() {
+		Connection con = DBConfig.connection_with("admin", "e.m.a.123");
+		return con;
+	}
+	
 	public UsuarioDAO(){}
 	
 	public void insert( Usuario u ) throws SQLException {
@@ -27,7 +32,7 @@ public class UsuarioDAO {
 			stmt.executeUpdate();
 	}
 
-	public String find_email_from(Map<String, String> params) {
+public String find_email_from(Map<String, String> params) {
 		String response = "";
 		try {
 			Connection  conn = DBConfig.getConexion();
@@ -53,8 +58,6 @@ public class UsuarioDAO {
 				.map((Map.Entry<String, String> e) -> String.format("%s='%s'", e.getKey(), e.getValue()))
 				.collect(Collectors.joining(" AND ", "WHERE ", ""));
 	}
-
-
 
 }
 	

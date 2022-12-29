@@ -1,7 +1,6 @@
 package ar.com.cac.controladores;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -61,11 +60,11 @@ public class UsuariosController extends HttpServlet {
 			insert_user_with(params);
 		} catch (SQLException e1) {
 			if (e1.getMessage().contains("Duplicate")) {
-				result = String.format("result=fail&message=:%d: El correo electrÛnico <b>%s</b> ya est· en uso",
+				result = String.format("result=fail&message=:%d: El correo electr√≥nico <b>%s</b> ya est√° en uso",
 						e1.getErrorCode(), params.get("email_in"));
 			}
 		} catch (NullPointerException ex ) {
-			result = "result=fail&message=Servidor no est· disponible";
+			result = "result=fail&message=Servidor no est√° disponible";
 		}
 		response.sendRedirect(String.format("http://localhost:8080%s/registro.jsp?%s", request.getContextPath(), result));
 	}
