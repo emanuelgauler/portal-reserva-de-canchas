@@ -82,14 +82,11 @@ public class paddelDAO implements DAO<paddel>{
 		return paddel;
 	}
 
-<<<<<<< Updated upstream
-=======
 	@Override
 	public List<paddel> getAllById(int id) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
->>>>>>> Stashed changes
 
 }

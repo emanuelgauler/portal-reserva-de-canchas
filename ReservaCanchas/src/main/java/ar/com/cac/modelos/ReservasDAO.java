@@ -56,13 +56,10 @@ public class ReservasDAO implements DAO<Reservas> {
 		return null;
 	}
 
-<<<<<<< Updated upstream
-=======
 	@Override
 	public List<Reservas> getAllById(int id) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
->>>>>>> Stashed changes
 }

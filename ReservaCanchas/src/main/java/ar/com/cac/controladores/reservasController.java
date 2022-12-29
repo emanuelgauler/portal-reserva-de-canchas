@@ -6,11 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-<<<<<<< Updated upstream
-=======
 import jakarta.servlet.http.HttpSession;
 
->>>>>>> Stashed changes
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -61,22 +58,15 @@ public class reservasController extends HttpServlet {
 			java.util.Date date = format.parse(request.getParameter("Fecha"));
 			java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 			
-<<<<<<< Updated upstream
-=======
 			HttpSession session = request.getSession();
 			Integer userId = (Integer) session.getAttribute("userId");
 			
->>>>>>> Stashed changes
 			Reservas reserva =  new Reservas();	
 			reserva.setIdCancha(Integer.parseInt(request.getParameter("IdCancha")));
 			reserva.setFecha(sqlDate);
 			reserva.setHora(request.getParameter("Hora"));
 			reserva.setTotalReserva(Double.parseDouble(request.getParameter("TotalReserva")));
-<<<<<<< Updated upstream
-			reserva.setIdUsuario(Integer.parseInt(request.getParameter("IdUsuario")));
-=======
 			reserva.setIdUsuario(userId);
->>>>>>> Stashed changes
 			System.out.println("Llego acá");
 			ReservasDAO rDao = new ReservasDAO();
 			rDao.insert(reserva);

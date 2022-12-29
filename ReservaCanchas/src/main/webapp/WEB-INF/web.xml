@@ -94,8 +94,6 @@
     <servlet-name>misReservasController</servlet-name>
     <url-pattern>/misReservasController</url-pattern>
   </servlet-mapping>
-<<<<<<< Updated upstream
-=======
   <servlet>
     <description></description>
     <display-name>loginController</display-name>
@@ -106,5 +104,4 @@
     <servlet-name>loginController</servlet-name>
     <url-pattern>/loginController</url-pattern>
   </servlet-mapping>
->>>>>>> Stashed changes
 </web-app>

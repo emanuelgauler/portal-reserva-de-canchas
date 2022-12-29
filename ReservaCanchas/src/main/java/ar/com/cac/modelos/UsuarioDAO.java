@@ -1,7 +1,5 @@
 package ar.com.cac.modelos;
 
-<<<<<<< Updated upstream
-=======
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,13 +11,10 @@ import java.util.stream.Collectors;
 
 import ar.com.cac.config.DBConfig;
 
->>>>>>> Stashed changes
 public class UsuarioDAO {
 	
 	public UsuarioDAO(){}
 	
-<<<<<<< Updated upstream
-=======
 	public void insert( Usuario u ) throws SQLException {
 		String query = "INSERT INTO Usuarios(apellido, nombre, email, clave) VALUES(?,?,?,?);";
 		var conn = DBConfig.getConexion();
@@ -60,7 +55,6 @@ public class UsuarioDAO {
 	}
 
 
->>>>>>> Stashed changes
 
 }
 	

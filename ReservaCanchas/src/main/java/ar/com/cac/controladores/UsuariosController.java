@@ -6,6 +6,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import ar.com.cac.config.DBConfig;
+import ar.com.cac.modelos.Usuario;
+import ar.com.cac.modelos.UsuarioDAO;
 
 /**
  * Servlet implementation class UsuariosController
@@ -13,6 +25,7 @@ import java.io.IOException;
 @WebServlet("/usuarios")
 public class UsuariosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UsuarioDAO users = new UsuarioDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -26,10 +39,6 @@ public class UsuariosController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< Updated upstream
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-=======
 		Map<String, String> params = transform_query_string( request.getParameterMap() );
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
@@ -37,17 +46,12 @@ public class UsuariosController extends HttpServlet {
 		/*
 		*/
 		writer.println( users.find_email_from( params ) );
->>>>>>> Stashed changes
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< Updated upstream
-		// TODO Auto-generated method stub
-		doGet(request, response);
-=======
 		Map<String, String> params = request.getParameterMap().entrySet().stream()
 				.collect(Collectors.toMap(Map.Entry<String, String[]>::getKey,
 						(Map.Entry<String, String[]> e) -> e.getValue()[0]));
@@ -85,7 +89,6 @@ public class UsuariosController extends HttpServlet {
 			result.put( entry.getKey(), entry.getValue()[0] );
 		}
 		return result;
->>>>>>> Stashed changes
 	}
 
 }

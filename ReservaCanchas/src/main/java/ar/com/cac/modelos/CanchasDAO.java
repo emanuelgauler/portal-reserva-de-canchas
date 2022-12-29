@@ -106,15 +106,12 @@ public class CanchasDAO implements DAO<Canchas>{
 				canchas.setValor(rs.getString("valor"));			
 			}			
 			return canchas;
-<<<<<<< Updated upstream
-=======
 		}
 
 		@Override
 		public List<Canchas> getAllById(int id) throws SQLException {
 			// TODO Auto-generated method stub
 			return null;
->>>>>>> Stashed changes
 		}
 		
 	}
